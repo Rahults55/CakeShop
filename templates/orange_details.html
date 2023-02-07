@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% for org in orngs %}
+ <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src={{org.img.url}} alt="">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="detail-box">
+            <div class="heading_container">
+              <hr>
+              <h2>
+                {{org.name}}
+              </h2>
+            </div>
+            <p>
+              {{org.desc}}
+            </p>
+            <p>
+             Rs:{{org.price}}/-
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+{% endblock %}
